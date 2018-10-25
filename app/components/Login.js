@@ -43,7 +43,7 @@ export default class Login extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text>Login</Text>
+                <Text>Logga in</Text>
                 {this.state.errorMessage && (
                     <Text style={{ color: "red" }}>{this.state.errorMessage}</Text>
                 )}
