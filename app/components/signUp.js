@@ -40,7 +40,7 @@ export default class SignUp extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text>Sign Up</Text>
+                <Text>Registrera</Text>
 
                 <Text style={{ color: "red" }}>{this.state.errorMessage}</Text>
 
@@ -54,7 +54,7 @@ export default class SignUp extends React.Component {
                 />
                 <TextInput
                     secureTextEntry
-                    placeholder="Password"
+                    placeholder="Lösenord"
                     autoCapitalize="none"
                     returnKeyType="send"
                     onSubmitEditing={this.handleSignUp}
@@ -63,12 +63,12 @@ export default class SignUp extends React.Component {
                     value={this.state.password}
                 />
                 {!this.state.signingUp ? (
-                    <Button title="Sign Up" onPress={this.handleSignUp} />
+                    <Button title="Registrera" onPress={this.handleSignUp} />
                 ) : (
                         <ActivityIndicator />
                     )}
                 <Button
-                    title="Already have an account? Log in"
+                    title="Har konto? Logga in"
                     onPress={() => this.props.navigation.navigate("Login")}
                 />
             </View>

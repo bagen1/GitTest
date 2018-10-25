@@ -69,16 +69,16 @@ export default class Login extends React.Component {
                     onPress={() => this.props.navigation.navigate("forgotPassword")}
                     style={styles.button}
                 >
-                    <Text>Forgot password?</Text>
+                    <Text>Glömt lösenord?</Text>
                 </TouchableOpacity>
 
                 {!this.state.login ? (
-                    <Button title="Login" onPress={this.handleLogin} />
+                    <Button title="Logga in" onPress={this.handleLogin} />
                 ) : (
                         <ActivityIndicator />
                     )}
                 <Button
-                    title="Don't have an account? Sign Up"
+                    title="Inget konto? Registrera"
                     onPress={() => this.props.navigation.navigate("SignUp")}
                 />
             </View>

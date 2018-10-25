@@ -38,7 +38,7 @@ export default class forgotPassword extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text>Forgot Password</Text>
+                <Text>Glömt lösenord</Text>
                 {this.state.errorMessage && (
                     <Text style={{ color: "red" }}>{this.state.errorMessage}</Text>
                 )}
@@ -53,10 +53,10 @@ export default class forgotPassword extends React.Component {
                     value={this.state.email}
                 />
                 {!this.state.loading ? (
-                    <Button title="Send" onPress={this.forgotPassword} />
+                    <Button title="Skicka" onPress={this.forgotPassword} />
                 ) : (<ActivityIndicator />)}
                 <Button
-                    title="Back" onPress={() => this.props.navigation.navigate("Login")}
+                    title="Tillbaka" onPress={() => this.props.navigation.navigate("Login")}
                 />
             </View>
         );
