@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
         padding: 16,
         marginBottom: 20,
         backgroundColor: "#fff",
-        borderBottomColor: "red",
+        borderBottomColor: "#19dbd4",
         borderBottomWidth: 2
     }
 });
