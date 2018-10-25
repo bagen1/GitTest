@@ -69,7 +69,7 @@ export default class Login extends React.Component {
                     onPress={() => this.props.navigation.navigate("forgotPassword")}
                     style={styles.button}
                 >
-                    <Text>Forgot password? hej is this working??</Text>
+                    <Text>Forgot password?</Text>
                 </TouchableOpacity>
 
                 {!this.state.login ? (
