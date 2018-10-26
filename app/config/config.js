@@ -1,11 +1,12 @@
 import * as firebase from "firebase";
 
-const firebaseConfig = {
-    apiKey: "AIzaSyDe4bf4su1vqFUHTAJkZkosDsl8ywSOs3U",
-    authDomain: "login-45157.firebaseapp.com",
-    databaseURL: "https://login-45157.firebaseio.com",
-    projectId: "login-45157",
-    storageBucket: "login-45157.appspot.com"
+var firebaseConfig = {
+    apiKey: "AIzaSyAUfuHIXOiaML4zlZylM_XVoOPINBo4Vcc",
+    authDomain: "sort-store.firebaseapp.com",
+    databaseURL: "https://sort-store.firebaseio.com",
+    projectId: "sort-store",
+    storageBucket: "sort-store.appspot.com",
+    messagingSenderId: "63049704251"
 };
 
 const fire = firebase.initializeApp(firebaseConfig);

@@ -1,8 +1,14 @@
 import React from "react";
+<<<<<<< HEAD
 import { StyleSheet, Platform, Image, Text, View, StatusBar, ListView,  } from "react-native";
 import fire from "../config/config";
 import {Container, Content, Header, Form, Input, Item,Label, Button, Icon, List, ListItem} from 'native-base';
 import { database } from "firebase";
+=======
+import { StyleSheet, Platform, Image, Text, View, Button, } from "react-native";
+import fire from "../config/config";
+import { Container, Content, Header, Form, Input, Item, Label } from 'native-base';
+>>>>>>> e402d2e660319cdda769d84ad9a9d74bc6c14dc2
 
 var data = ["johan", "johanna"]
 export default class Main extends React.Component {
@@ -29,6 +35,7 @@ export default class Main extends React.Component {
         const { currentUser } = this.state;
 
         return (
+<<<<<<< HEAD
             <Container>
             <Header style={{marginTop:StatusBar.currentHeight }}>
                 <Content>
@@ -77,6 +84,22 @@ export default class Main extends React.Component {
                 </Content>
            </Container>
        );
+=======
+            <View style={styles.container}>
+                <Header>
+                    <Content>
+                        <Item>
+
+                            <Input>
+                                <Text>Hi {currentUser && currentUser.email}!</Text>
+                                <Button onPress={() => fire.auth().signOut()} title="Logga ut" />
+                            </Input>
+                        </Item>
+                    </Content>
+                </Header>
+            </View>
+        );
+>>>>>>> e402d2e660319cdda769d84ad9a9d74bc6c14dc2
     }
 }
 const styles = StyleSheet.create({
