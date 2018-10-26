@@ -6,7 +6,7 @@ import {
     View,
     Button,
     ActivityIndicator,
-    TouchableOpacity
+    TouchableOpacity, Platform,
 } from "react-native";
 import fire from "../config/config";
 
@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
         padding: 16,
         marginBottom: 20,
         backgroundColor: "#fff",
-        borderBottomColor: "#19dbd4",
+        borderBottomColor: Platform.OS === 'ios' ? "#19dbd4" : "rgba(0,0,0,0)",
         borderBottomWidth: 2
     },
     button: {
