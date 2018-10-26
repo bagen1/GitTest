@@ -48,12 +48,15 @@ export default class SignUp extends React.Component {
                     placeholder="Email"
                     autoCapitalize="none"
                     keyboardType="email-address"
+                    returnKeyType={"next"}
+                    onSubmitEditing={() => { this.Lösenord.focus(); }}
                     style={styles.textinput}
                     onChangeText={email => this.setState({ email })}
                     value={this.state.email}
                 />
                 <TextInput
                     secureTextEntry
+                    ref={(Input) => { this.Lösenord = Input; }}
                     placeholder="Lösenord"
                     autoCapitalize="none"
                     returnKeyType="send"

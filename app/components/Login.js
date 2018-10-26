@@ -9,6 +9,7 @@ import {
     TouchableOpacity, Platform,
 } from "react-native";
 import fire from "../config/config";
+import { Input } from "native-base";
 
 export default class Login extends React.Component {
     state = { email: "", password: "", errorMessage: null, login: false };
@@ -52,14 +53,17 @@ export default class Login extends React.Component {
                     placeholder="Email"
                     keyboardType="email-address"
                     autoCapitalize="none"
+                    returnKeyType={"next"}
+                    onSubmitEditing={() => { this.Lösenord.focus(); }}
                     onChangeText={email => this.setState({ email })}
                     value={this.state.email}
                 />
                 <TextInput
+                    ref={(Input) => { this.Lösenord = Input; }}
                     secureTextEntry
                     style={styles.textinput}
                     autoCapitalize="none"
-                    placeholder="Password"
+                    placeholder="Lösenord"
                     returnKeyType="send"
                     onSubmitEditing={this.handleLogin}
                     onChangeText={password => this.setState({ password })}

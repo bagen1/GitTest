@@ -1,7 +1,7 @@
 import React from "react";
-import { StyleSheet, Platform, Image, Text, View, Button,  } from "react-native";
+import { StyleSheet, Platform, Image, Text, View, Button, } from "react-native";
 import fire from "../config/config";
-import {Container, Content, Header, Form, Input, Item,Label} from 'native-base';
+import { Container, Content, Header, Form, Input, Item, Label } from 'native-base';
 
 export default class Main extends React.Component {
     state = { currentUser: null };
@@ -16,18 +16,18 @@ export default class Main extends React.Component {
 
         return (
             <View style={styles.container}>
-            <Header>
-                <Content>
-                    <Item>
-                        
-                        <Input>
-                         <Text>Hi {currentUser && currentUser.email}!</Text>
-                         <Button onPress={() => fire.auth().signOut()} title="Logga ut" />
-                        </Input>
-                    </Item>
-                </Content>
-                </Header> 
-           </View>
+                <Header>
+                    <Content>
+                        <Item>
+
+                            <Input>
+                                <Text>Hi {currentUser && currentUser.email}!</Text>
+                                <Button onPress={() => fire.auth().signOut()} title="Logga ut" />
+                            </Input>
+                        </Item>
+                    </Content>
+                </Header>
+            </View>
         );
     }
 }
