@@ -6,7 +6,8 @@ import {
     View,
     Button,
     ActivityIndicator,
-    TouchableOpacity, Platform,
+    TouchableOpacity,
+    Platform
 } from "react-native";
 import fire from "../config/config";
 import { Input } from "native-base";
