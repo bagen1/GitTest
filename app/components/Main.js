@@ -1,39 +1,25 @@
 import React from "react";
-<<<<<<< HEAD
-import { StyleSheet, Platform, Image, Text, View, StatusBar, ListView,  } from "react-native";
-=======
-import { StyleSheet, Platform, Image, Text, View, StatusBar, ListView, } from "react-native";
->>>>>>> 04f23e116fca4566f2a5d4c23d91c783a9912311
+import { StyleSheet, Platform, Image, Text,  StatusBar, ListView, View, TouchableOpacity, } from "react-native";
 import fire from "../config/config";
-import { Container, Content, Header, Form, Input, Item, Label, Button, Icon, List, ListItem } from 'native-base';
-import { database } from "firebase";
-<<<<<<< HEAD
-=======
+import { Container, Content, Header, Form, Input, Item, Label, Button, Icon, List, ListItem, } from 'native-base';
 
->>>>>>> 04f23e116fca4566f2a5d4c23d91c783a9912311
 
 var data = []
-export default class Main extends React.Component {
+export default class Create extends React.Component {
     state = { currentUser: null };
-
+       
     constructor(props) {
         super(props);
 
         this.ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 })
 
         this.state = {
-<<<<<<< HEAD
             listViewData: data,
             newContact:""
-=======
-            ListViewData: data,
-            newContact: ""
->>>>>>> 04f23e116fca4566f2a5d4c23d91c783a9912311
         }
     }
 
     componentDidMount() {
-<<<<<<< HEAD
              
             var that = this
             fire.database().ref('/contacts').on('child_added',function(data){
@@ -59,19 +45,14 @@ this.setState({listViewData : newData});
     }
     showInformation(){
 
-=======
-
-        const { currentUser } = fire.auth();
-        this.setState({ currentUser });
->>>>>>> 04f23e116fca4566f2a5d4c23d91c783a9912311
     }
 
     render() {
-        const { currentUser } = this.state;
-
+      const {currentUser} = this.state;
+      
         return (
-<<<<<<< HEAD
             <Container>
+                
             <Header style={{marginTop:StatusBar.currentHeight }}>
                 <Content>
                     <Item>
@@ -79,106 +60,90 @@ this.setState({listViewData : newData});
                         
                          {/* <Text>Hi {currentUser && currentUser.email}!</Text>
                          <Button onPress={() => fire.auth().signOut()} title="Logga ut" /> */}
-                        <Input
+                        <Input style={styles.Input}
                         onChangeText = {(newContact) => this.setState({newContact}) }
                         placeholder="Lägg till"
-                        />
-                        <Button onPress={() => this.addRow (this.state.newContact)}> 
-                            <Icon name="add"></Icon>
-                        </Button>
+                        placeholderTextColor="#000"
+                            />
+                        <TouchableOpacity  onPress={() => this.addRow (this.state.newContact)} > 
+                            <Icon name="add" style={styles.icon}></Icon>
+                        </TouchableOpacity>
+                       
                     </Item>
                 </Content>
                 </Header> 
-                <Content>
-                    
-                  <List
+                <Content >
+                    <View>
+                  <List 
                   enableEmptySections
                   dataSource={this.ds.cloneWithRows(this.state.listViewData)}
                   renderRow ={data =>
                  
                     <ListItem>
-                        <Text>
+                        <Text style={styles.Text} >
                             {data.val().name}
                         </Text>
                     </ListItem>
                   }
-                    renderLeftHiddenRow={data =>
-                    <Button full onPress={()=> this.addRow(data)}>
-                        <Icon name="vafinnsdetföricon" />
-                    </Button>
-                    }
+                    // renderLeftHiddenRow={data =>
+                    // <Button full onPress={()=> this.addRow(data)}>
+                    //     <Icon name="edit" />
+                    // </Button>
+                    // }
 
                     renderRightHiddenRow={(data,secId,rowId,rowMap) =>
-                        <Button full danger onPress={()=> this.deleteRow(secId, rowId,rowMap,data)}>
-                        <Icon name="trash"/>
+                        <Button  danger onPress={()=> this.deleteRow(secId, rowId,rowMap,data)}>
+                        <Icon name="trash" />
                         </Button>
                     }
 
-                    leftOpenValue={-75}
-                    rightOpenValue={-75}
+                    rightOpenValue={-50}
+                    
                     />
-                  
+                  </View>
                 </Content>
+             
            </Container>
+           
        );
-=======
-
-            <Container>
-                <Header style={{ marginTop: StatusBar.currentHeight }}>
-                    <Content>
-                        <Item>
-
-
-                            {/* <Text>Hi {currentUser && currentUser.email}!</Text>
-                         <Button onPress={() => fire.auth().signOut()} title="Logga ut" /> */}
-                            <Input
-                                placeholder="Lägg till"
-                            />
-                            <Button>
-                                <Icon name="add"></Icon>
-                            </Button>
-                        </Item>
-                    </Content>
-                </Header>
-                <Content>
-
-                    <List
-                        DataSource={this.cloneWithRows(this.state.ListViewData)}
-                        renderRow={data =>
-
-                            <ListItem>
-                                <Text>
-                                    {data}
-                                </Text>
-                            </ListItem>
-                        }
-                        renderLeftHiddenRow={data =>
-                            <Button>
-                                <Icon />
-                            </Button>
-                        }
-
-                        renderRightHiddenRow={data =>
-                            <Button>
-                                <Icon />
-                            </Button>
-                        }
-
-                        leftOpenValue={-75}
-                        rightOpenValue={-75}
-                    />
-
-                </Content>
-            </Container>
-        );
-
->>>>>>> 04f23e116fca4566f2a5d4c23d91c783a9912311
     }
 }
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center"
+        
+       
+        
+        
+    },
+    Text:{
+        marginLeft:10,
+        fontSize:18,
+    },
+    
+    icon:{
+        width:25,
+        height:25,
+        
+    },
+
+    Input:{
+                       
     }
+    
+
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
